@@ -4,14 +4,19 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class TravelDTO {
+	Integer travelId;
+	
+	String source;
 
-	private Integer travelId;
-	private String source;
-	private String destination;
-	private LocalDate date;
-	private LocalTime time;
-	private Integer trainId;
-	private Double price;
+	String destination;
+
+	LocalDate date;
+
+	LocalTime time;
+
+	Integer trainId;
+
+	Double price;
 
 	public Integer getTravelId() {
 		return travelId;
@@ -68,5 +73,6 @@ public class TravelDTO {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
 	
 }

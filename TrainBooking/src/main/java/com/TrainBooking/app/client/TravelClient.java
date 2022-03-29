@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.TrainBooking.app.dto.TravelDTO;
 
+
 @FeignClient(name = "TRAVELSERVICE")
 public interface TravelClient {
-	
-	@GetMapping("/travels/{travelId}")
-	ResponseEntity<TravelDTO> getTravelById(@PathVariable Integer travelId);
 
+	@GetMapping("/travels/{travelId}")
+	public ResponseEntity<TravelDTO> getTravelById(@PathVariable(name = "travelId") Integer travelId);
+	
 }
