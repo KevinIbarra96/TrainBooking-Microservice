@@ -14,8 +14,7 @@ import com.TrainBooking.app.client.UserClient;
 import com.TrainBooking.app.dto.BookingRequestDto;
 import com.TrainBooking.app.dto.ResponseDto;
 import com.TrainBooking.app.dto.TrainDetailsResponseDto;
-import com.TrainBooking.app.dto.UserDTO;
-import com.TrainBooking.app.entity.booking;
+import com.TrainBooking.app.entity.Booking;
 import com.TrainBooking.app.repo.BookingRepo;
 import com.TrainBooking.app.service.TrainBookingTrainService;
 
@@ -46,9 +45,9 @@ public class TrainBookingTrainServiceImp implements TrainBookingTrainService{
 		LocalDateTime currentDate = LocalDateTime.now();
 		String bookingTicket = bookingRequestDto.getUserId() + "-" + bookingRequestDto.getTravelId();
 
-		List<booking> bookingList = new ArrayList<booking>();
+		List<Booking> bookingList = new ArrayList<Booking>();
 		for(int i=0; i<bookingRequestDto.getPassengerList().size(); i++) {
-			booking booking = new booking();
+			Booking booking = new Booking();
 			booking.setBookingticket(bookingTicket);
 			booking.setDateTime(currentDate);
 			booking.setUserId(bookingRequestDto.getUserId());
