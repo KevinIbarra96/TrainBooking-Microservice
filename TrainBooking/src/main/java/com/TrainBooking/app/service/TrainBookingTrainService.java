@@ -1,7 +1,5 @@
 package com.TrainBooking.app.service;
 
-import java.util.List;
-
 import org.springframework.http.ResponseEntity;
 
 import com.TrainBooking.app.dto.BookingRequestDto;
@@ -12,5 +10,5 @@ public interface TrainBookingTrainService {
 
 	ResponseEntity<TrainDetailsResponseDto> getTrainById(Integer trainId);
 	
-	ResponseDto bookTravel(List<BookingRequestDto> bookingRequestDtoList);
+	ResponseDto bookTravel(BookingRequestDto bookingRequestDto);
 }

@@ -1,29 +1,12 @@
 package com.TrainBooking.app.dto;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 public class BookingRequestDto {
-	
-	private String bookingticket;
-	private LocalDateTime dateTime;
 	private Integer userId;
 	private Integer travelId;
-	private String passengerName;
-	private String passengerEmail;
-	private String passengerPhone;
+	private List<PassengerDto> passengerList;
 	
-	public String getBookingticket() {
-		return bookingticket;
-	}
-	public void setBookingticket(String bookingticket) {
-		this.bookingticket = bookingticket;
-	}
-	public LocalDateTime getDateTime() {
-		return dateTime;
-	}
-	public void setDateTime(LocalDateTime dateTime) {
-		this.dateTime = dateTime;
-	}
 	public Integer getUserId() {
 		return userId;
 	}
@@ -36,23 +19,11 @@ public class BookingRequestDto {
 	public void setTravelId(Integer travelId) {
 		this.travelId = travelId;
 	}
-	public String getPassengerName() {
-		return passengerName;
+	public List<PassengerDto> getPassengerList() {
+		return passengerList;
 	}
-	public void setPassengerName(String passengerName) {
-		this.passengerName = passengerName;
-	}
-	public String getPassengerEmail() {
-		return passengerEmail;
-	}
-	public void setPassengerEmail(String passengerEmail) {
-		this.passengerEmail = passengerEmail;
-	}
-	public String getPassengerPhone() {
-		return passengerPhone;
-	}
-	public void setPassengerPhone(String passengerPhone) {
-		this.passengerPhone = passengerPhone;
+	public void setPassengerList(List<PassengerDto> passengerList) {
+		this.passengerList = passengerList;
 	}
 
 }

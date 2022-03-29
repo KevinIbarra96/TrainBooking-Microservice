@@ -1,5 +1,6 @@
 package com.TrainBooking.app.service.impl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,9 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.TrainBooking.app.client.TrainClient;
+import com.TrainBooking.app.client.UserClient;
 import com.TrainBooking.app.dto.BookingRequestDto;
 import com.TrainBooking.app.dto.ResponseDto;
 import com.TrainBooking.app.dto.TrainDetailsResponseDto;
+import com.TrainBooking.app.dto.UserDTO;
 import com.TrainBooking.app.entity.booking;
 import com.TrainBooking.app.repo.BookingRepo;
 import com.TrainBooking.app.service.TrainBookingTrainService;
@@ -19,8 +22,11 @@ import com.TrainBooking.app.service.TrainBookingTrainService;
 @Service
 public class TrainBookingTrainServiceImp implements TrainBookingTrainService{
 	
-	@Autowired
+	@Autowired(required = false)
 	TrainClient trainClient;
+	
+	@Autowired(required = false)
+	UserClient userClient;
 	
 	@Autowired
 	BookingRepo bookingRepo;
@@ -31,16 +37,24 @@ public class TrainBookingTrainServiceImp implements TrainBookingTrainService{
 	}
 
 	@Override
-	public ResponseDto bookTravel(List<BookingRequestDto> bookingRequestDtoList) {
+	public ResponseDto bookTravel(BookingRequestDto bookingRequestDto) {
 		// Verificamos que user exista
+		// ResponseEntity<UserDTO> userDto = userClient.GetUserById(1);
 		
 		// Verificamos que travel exista
 		
-		// Modificamos List BookingRequestDto a List<Booking>
+		LocalDateTime currentDate = LocalDateTime.now();
+		String bookingTicket = bookingRequestDto.getUserId() + "-" + bookingRequestDto.getTravelId();
+
 		List<booking> bookingList = new ArrayList<booking>();
-		for(int i=0; i<bookingRequestDtoList.size(); i++) {
+		for(int i=0; i<bookingRequestDto.getPassengerList().size(); i++) {
 			booking booking = new booking();
-			BeanUtils.copyProperties(bookingRequestDtoList.get(i), booking);
+			booking.setBookingticket(bookingTicket);
+			booking.setDateTime(currentDate);
+			booking.setUserId(bookingRequestDto.getUserId());
+			booking.setTravelId(bookingRequestDto.getTravelId());
+			
+			BeanUtils.copyProperties(bookingRequestDto.getPassengerList().get(i), booking);
 			bookingList.add(booking);
 		}
 		
