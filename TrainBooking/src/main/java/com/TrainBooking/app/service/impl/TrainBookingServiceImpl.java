@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 import com.TrainBooking.app.client.TravelClient;
 import com.TrainBooking.app.client.UserClient;
 import com.TrainBooking.app.dto.TrainBookingResponseDTO;
-import com.TrainBooking.app.dto.TravelDTO;
 import com.TrainBooking.app.dto.UserDTO;
+import com.TrainBooking.app.exception.UserNotFoundException;
 import com.TrainBooking.app.repo.TrainBookingRepo;
 import com.TrainBooking.app.service.TrainBookingService;
+
 
 @Service
 public class TrainBookingServiceImpl implements TrainBookingService{
@@ -28,10 +29,16 @@ public class TrainBookingServiceImpl implements TrainBookingService{
 	@Override
 	public List<TrainBookingResponseDTO> getBookingByUserId(Integer userId) {
 		
+		UserDTO userDTO = userClient.GetUserById(userId).getBody();
+		
+		if(userDTO.getUsername()==null) {
+			throw new UserNotFoundException("User not found");
+		}				
+		
 		List<TrainBookingResponseDTO> trainBookingResponseDTO = trainBookingRepo.findByUserId(userId);	
 		
 		trainBookingResponseDTO.forEach(res ->{
-			res.setUser(userClient.GetUserById(userId).getBody());
+			res.setUser(userDTO);
 			res.setTravel(travelClient.getTravelById(userId).getBody());
 		});
 		
