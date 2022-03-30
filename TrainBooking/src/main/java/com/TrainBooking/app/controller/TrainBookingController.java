@@ -22,7 +22,7 @@ public class TrainBookingController {
 	@Autowired
 	TrainBookingService trainBookingService;
 		
-	@GetMapping("/GetBooking/{userId}")
+	@GetMapping("TrainBooking/GetBooking/{userId}")
 	public List<TrainBookingResponseDTO> GetBookingByUser(@PathVariable Integer userId){		
 		
 		List<TrainBookingResponseDTO> trainBookingResponseDTO = trainBookingService.getBookingByUserId(userId);
