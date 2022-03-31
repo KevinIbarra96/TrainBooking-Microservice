@@ -29,13 +29,13 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@PostMapping("users/Login")	
+	@PostMapping("/users/Login")	
 	public ResponseEntity<UserResponseDTO> Login(@Valid @RequestBody UserRequestDTO userRequestDTO) {
 		UserResponseDTO userResponseDTO = userService.AuthenticateUser(userRequestDTO);			
 		return new ResponseEntity<UserResponseDTO>(userResponseDTO,HttpStatus.OK);
 	}
 	
-	@PostMapping("users/Registry")
+	@PostMapping("/users/Registry")
 	public ResponseEntity<UserResponseDTO> UserRegistration(@Valid @RequestBody UserDTO user){
 		UserResponseDTO userResponseDTO = userService.UserRegistrationM(user);
 		
@@ -77,8 +77,7 @@ public class UserController {
 		
 		return new ResponseEntity<ValidationErrorResponse>(errorResponse,HttpStatus.OK);
 	}
-	
-	
+		
 }
 
 
