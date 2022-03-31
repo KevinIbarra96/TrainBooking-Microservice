@@ -12,4 +12,6 @@ public interface TrainBookingTrainService {
 	
 	ResponseDto bookTravel(BookingRequestDto bookingRequestDto);
 
+	ResponseDto bookTravel(BookingRequestDto bookingRequestDto);
+	
 }

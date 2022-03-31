@@ -14,13 +14,13 @@ import com.TrainBooking.app.dto.UserRequestDTO;
 @FeignClient(name = "USERSERVICE")
 public interface UserClient {
 	
-	@PostMapping("/Login")	
+	@PostMapping("/users/Login")	
 	public ResponseEntity<UserResponseDTO> Login(@RequestBody UserRequestDTO userRequestDTO);
 	
-	@PostMapping("/Registry")
+	@PostMapping("/users/Registry")
 	public ResponseEntity<UserResponseDTO> UserRegistration(@RequestBody UserDTO user);
 	
-	@GetMapping("/User/{UserId}")
+	@GetMapping("/users/{UserId}")
 	public ResponseEntity<UserDTO> GetUserById(@PathVariable Integer UserId);
 	
 }
