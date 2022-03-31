@@ -10,11 +10,11 @@ import feign.FeignException;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-	@ExceptionHandler(FeignException.class)
-	public ResponseEntity<ErrorResponse> handleException(FeignException ex){
-		ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(),"F500");
-		
-		return new ResponseEntity<ErrorResponse>(errorResponse,HttpStatus.OK);
-	}
+//	@ExceptionHandler(FeignException.class)
+//	public ResponseEntity<ErrorResponse> handleException(FeignException ex){
+//		ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(),"F500");
+//		
+//		return new ResponseEntity<ErrorResponse>(errorResponse,HttpStatus.OK);
+//	}
 	
 }

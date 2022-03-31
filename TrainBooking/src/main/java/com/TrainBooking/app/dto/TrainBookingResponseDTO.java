@@ -13,6 +13,10 @@ public class TrainBookingResponseDTO {
 	private String passengerEmail;
 	private String passengerPhone;
 	
+	public TrainBookingResponseDTO() {
+		
+	}
+	
 	public TrainBookingResponseDTO(Integer bookingId, String bookingticket, LocalDateTime dateTime, String passengerName, String passengerEmail, String passengerPhone) {
 		super();
 		this.bookingId = bookingId;
