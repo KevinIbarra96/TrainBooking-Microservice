@@ -1,0 +1,14 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+UserService,com.UserService.demo.constant,ApiConstants,3,0,0,0,1,0,1,0,1,0
+UserService,com.UserService.demo.dto,ResponseDTO,4,19,0,0,2,8,1,4,1,4
+UserService,com.UserService.demo.dto,UserResponseDTO,0,12,0,0,0,5,0,3,0,3
+UserService,com.UserService.demo.dto,UserRequestDTO,4,29,0,0,2,12,1,6,1,6
+UserService,com.UserService.demo.dto,UserDTO,16,34,0,0,8,13,4,7,4,7
+UserService,com.UserService.demo.exception,ErrorResponse,12,21,0,0,6,8,3,4,3,4
+UserService,com.UserService.demo.exception,UserPasswordIncorrectException,4,0,0,0,2,0,1,0,1,0
+UserService,com.UserService.demo.exception,UserNotFoundException,0,4,0,0,0,2,0,1,0,1
+UserService,com.UserService.demo.exception,ValidationErrorResponse,4,13,0,0,2,4,1,2,1,2
+UserService,com.UserService.demo.service.impl,UserServiceImpl,59,41,3,3,14,9,4,3,2,2
+UserService,com.UserService.demo,UserServiceApplication,5,3,0,0,2,1,1,1,1,1
+UserService,com.UserService.demo.entity,User,35,3,0,0,15,1,10,1,10,1
+UserService,com.UserService.demo.controller,UserController,26,67,0,0,4,13,2,6,2,6

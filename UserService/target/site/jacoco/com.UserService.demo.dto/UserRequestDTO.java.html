@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserRequestDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">UserService</a> &gt; <a href="index.source.html" class="el_package">com.UserService.demo.dto</a> &gt; <span class="el_source">UserRequestDTO.java</span></div><h1>UserRequestDTO.java</h1><pre class="source lang-java linenums">package com.UserService.demo.dto;
+
+import javax.validation.constraints.NotEmpty;
+
+public class UserRequestDTO {
+	
+	private Integer userId;
+	@NotEmpty(message =&quot;User name should not be empty&quot;)
+	private String username;
+	@NotEmpty(message = &quot;password field should not be empty&quot;)
+	private String password;
+	
+	
+	public UserRequestDTO(Integer userId, String username,String password) {
+<span class="fc" id="L15">		super();</span>
+<span class="fc" id="L16">		this.userId = userId;</span>
+<span class="fc" id="L17">		this.username = username;</span>
+<span class="fc" id="L18">		this.password = password;</span>
+<span class="fc" id="L19">	}</span>
+	public Integer getUserId() {
+<span class="fc" id="L21">		return userId;</span>
+	}
+	public void setUserId(Integer userId) {
+<span class="nc" id="L24">		this.userId = userId;</span>
+<span class="nc" id="L25">	}</span>
+	public String getUserName() {
+<span class="fc" id="L27">		return username;</span>
+	}
+	public void setUserName(String userName) {
+<span class="fc" id="L30">		this.username = userName;</span>
+<span class="fc" id="L31">	}</span>
+	public String getPassword() {
+<span class="fc" id="L33">		return password;</span>
+	}
+	public void setPassword(String password) {
+<span class="fc" id="L36">		this.password = password;</span>
+<span class="fc" id="L37">	}</span>
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
