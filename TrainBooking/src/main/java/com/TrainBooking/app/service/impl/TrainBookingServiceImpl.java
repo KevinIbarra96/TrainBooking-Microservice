@@ -46,7 +46,7 @@ public class TrainBookingServiceImpl implements TrainBookingService{
 	
 	@Override
 	public TrainBookingResponseDTO getBookingByUserId(Integer userId) {
-				
+		
 		UserDTO userDTO = userClient.GetUserById(userId).getBody();
 		TrainBookingResponseDTO trainBookingResponseDTO = new TrainBookingResponseDTO();
 		
@@ -59,7 +59,7 @@ public class TrainBookingServiceImpl implements TrainBookingService{
 		List<TrainBookingDTO> trainBookingDTO = trainBookingRepo.findByUserId(userId);	
 		 
 		trainBookingDTO.forEach(res ->{			
-			res.setTravel(travelClient.getTravelById(userId).getBody());
+			res.setTravel(travelClient.getTravelById(res.getTavelId()).getBody());
 		});
 		trainBookingResponseDTO.setUser(userDTO);
 		trainBookingResponseDTO.setTrainBooking(trainBookingDTO);

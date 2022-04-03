@@ -7,20 +7,30 @@ public class TrainBookingDTO {
 	private Integer bookingId;
 	private String bookingticket;
 	private LocalDateTime dateTime;
+	private Integer tavelId;
 	private TravelDTO travel;
 	private String passengerName;
 	private String passengerEmail;
 	private String passengerPhone;
 	
-	public TrainBookingDTO(Integer bookingId, String bookingticket, LocalDateTime dateTime,
-			String passengerName, String passengerEmail, String passengerPhone) {
+
+	public TrainBookingDTO(Integer bookingId, String bookingticket, LocalDateTime dateTime, Integer tavelId,
+			TravelDTO travel, String passengerName, String passengerEmail, String passengerPhone) {
 		super();
 		this.bookingId = bookingId;
 		this.bookingticket = bookingticket;
 		this.dateTime = dateTime;
+		this.tavelId = tavelId;
+		this.travel = travel;
 		this.passengerName = passengerName;
 		this.passengerEmail = passengerEmail;
 		this.passengerPhone = passengerPhone;
+	}
+	public Integer getTavelId() {
+		return tavelId;
+	}
+	public void setTavelId(Integer tavelId) {
+		this.tavelId = tavelId;
 	}
 	public Integer getBookingId() {
 		return bookingId;

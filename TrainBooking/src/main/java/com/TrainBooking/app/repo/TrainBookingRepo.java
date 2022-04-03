@@ -13,7 +13,7 @@ import com.TrainBooking.app.entity.Booking;
 public interface TrainBookingRepo extends JpaRepository<Booking,Integer>{
 
 	@Query("Select new com.TrainBooking.app.dto.TrainBookingDTO"
-			+ "(a.bookingId,a.bookingticket,a.dateTime,a.passengerName,a.passengerEmail,a.passengerPhone) "
+			+ "(a.bookingId,a.bookingticket,a.dateTime,a.traveid,a.passengerName,a.passengerEmail,a.passengerPhone) "
 			+ "from Booking a where a.userId=:userId")
 	List<TrainBookingDTO> findByUserId(Integer userId);
 	
