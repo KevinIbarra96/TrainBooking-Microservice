@@ -30,4 +30,5 @@ public class TrainBookingTrainController {
 		ResponseDto responseDto = trainBookingTrainService.bookTravel(bookingRequestDto);
 		return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
 	}
+	
 }

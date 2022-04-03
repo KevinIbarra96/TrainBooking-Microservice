@@ -33,28 +33,7 @@ public class TrainBookingTrainServiceImp implements TrainBookingTrainService{
 
 	@Override
 	public ResponseDto bookTravel(BookingRequestDto bookingRequestDto) {
-		// Verificamos que user exista
-		// ResponseEntity<UserDTO> userDto = userClient.GetUserById(1);
-		
-		// Verificamos que travel exista
-		
-		LocalDateTime currentDate = LocalDateTime.now();
-		String bookingTicket = bookingRequestDto.getUserId() + "-" + bookingRequestDto.getTravelId();
 
-		List<Booking> bookingList = new ArrayList<Booking>();
-		for(int i=0; i<bookingRequestDto.getPassengerList().size(); i++) {
-			Booking booking = new Booking();
-			booking.setBookingticket(bookingTicket);
-			booking.setDateTime(currentDate);
-			booking.setUserId(bookingRequestDto.getUserId());
-			booking.setTravelId(bookingRequestDto.getTravelId());
-			
-			BeanUtils.copyProperties(bookingRequestDto.getPassengerList().get(i), booking);
-			bookingList.add(booking);
-		}
-		
-		bookingRepo.saveAll(bookingList);
-		return new ResponseDto("Travel Booked", "TB-200");
-	}
-
+return null;
+}
 }

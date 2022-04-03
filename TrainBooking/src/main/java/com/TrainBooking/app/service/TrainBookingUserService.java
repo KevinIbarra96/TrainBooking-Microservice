@@ -13,5 +13,7 @@ public interface TrainBookingUserService {
 	ResponseEntity<UserResponseDTO> UserRegistration(UserDTO user);
 
 	ResponseEntity<UserDTO> getUserById(Integer userId);
+	
+	ResponseEntity<UserResponseDTO> AthenticateUserResi(UserRequestDTO userRequestDTO);
 
 }

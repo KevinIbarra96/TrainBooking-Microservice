@@ -6,6 +6,6 @@ import com.TrainBooking.app.dto.TrainBookingResponseDTO;
 
 public interface TrainBookingService {
 
-	List<TrainBookingResponseDTO> getBookingByUserId(Integer userId);
-
+	TrainBookingResponseDTO getBookingByUserId(Integer userId);
+	TrainBookingResponseDTO getBookingByUserIdResi(Integer userId);
 }
